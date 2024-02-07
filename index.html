@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="fonts.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 </head>
 <body>
@@ -92,35 +93,38 @@
         </nav>
     </header>
     <main>
-      <!--Calculo 1 TAB 1-->
-      <div id="tab1" class="tabcontent">
-        <h1 style="text-align: center;   margin-bottom: 20px;">Docentes - Calculo I</h1>
-        <div class="title-container">
-            <h3>Carlos Miranda</h3>
-            <button class="custom-button" class="tablink" onclick="openTab(event, 'tab3')">Ver</button>
-            <button class="custom-button" class="tablink" onclick="openTab(event, 'tab2')">Opinar</button>
-        </div>
-        <div class="title-container">
-            <h3>Edwin Callysaya</h3>
-            <button class="custom-button" class="tablink" onclick="openTab(event, 'tab3')">Ver</button>
-            <button class="custom-button" class="tablink" onclick="openTab(event, 'tab2')">Opinar</button>
-        </div>
-        <div class="comment-container">
-          <h3>Comentarios</h3>
-          <div class="comment-public">
-              <textarea id="commentInput" placeholder="Escribe un comentario..."></textarea>
-              <button class="custom-button" onclick="publicarComentario()">Publicar</button>
+        <!--Calculo 1 TAB 1-->
+        <div id="tab1" class="tabcontent">
+          <h1 style="text-align: center;   margin-bottom: 20px;">Docentes - Calculo I</h1>
+          <div class="title-container">
+              <h3>Carlos Miranda</h3>
+              <button class="custom-button" class="tablink" onclick="openTab(event, 'tab3')">Ver</button>
+              <button class="custom-button" class="tablink" onclick="openTab(event, 'tab2')">Opinar</button>
           </div>
-          <div class="comment-section" id="commentSection">
-              <!-- Aquí se mostrarán los comentarios -->
-              <div class="comment">
-                  <span class="comment-text">Este es un comentario de ejemplo.</span>
-              </div>
+          <div class="title-container">
+              <h3>Edwin Callysaya</h3>
+              <button class="custom-button" class="tablink" onclick="openTab(event, 'tab3')">Ver</button>
+              <button class="custom-button" class="tablink" onclick="openTab(event, 'tab2')">Opinar</button>
           </div>
-      </div>
-           
-      </div>
-    </main>
+          <div class="comment-container">
+            <h3>Comentarios</h3>
+            <div class="comment-public">
+                <textarea id="commentInput" placeholder="Escribe un comentario..."></textarea>
+                <button class="custom-button" onclick="publicarComentario()">Publicar</button>
+            </div>
+            <div class="comment-section" id="commentSection">
+                <!-- Aquí se mostrarán los comentarios -->
+                <div class="comment">
+                    <span class="comment-text">Ficct - 2023</span>
+                </div>
+            </div>
+        </div>
+             
+        </div>
+      </main>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi vitae, repellat eum fugiat quis quos ad exercitationem blanditiis explicabo veritatis molestias ipsam. Laborum quis blanditiis quos, est ipsum maxime. Consequatur!</p>
+    </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="menu.js"></script>
 </body>

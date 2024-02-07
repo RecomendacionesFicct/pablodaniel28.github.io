@@ -19,9 +19,9 @@ function main(){
     });
 
 }
-/////////////////////////////////////////////////////////////////////////////
+
+
 ///////////////////*navegacion con tabs*/////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function() {
    const subMenuLinks = document.querySelectorAll(".sub-menu a");
    const contenidoPrincipal = document.getElementById("contenido-principal");
@@ -74,5 +74,31 @@ function openTab(event, tabName) {
        event.currentTarget.classList.add("active");
    }
 
+}
+/////////////////////////////////////////////////////////////////////////////
+/////////comentarios///////////////////////////////////
+// JavaScript para manejar los comentarios
+function publicarComentario() {
+   var comment = document.getElementById("commentInput").value;
+   if (comment.trim() !== "") {
+       var newComment = document.createElement("div");
+       newComment.className = "comment";
+       newComment.innerHTML = comment + "<br><button class='custom-button' onclick='editarComentario(this)'>Editar</button> <button class='custom-button' onclick='eliminarComentario(this)'>Eliminar</button>";
+       document.getElementById("commentSection").appendChild(newComment);
+       document.getElementById("commentInput").value = "";
+   }
+}
+
+function editarComentario(button) {
+   var commentText = button.parentNode.firstChild;
+   var updatedComment = prompt("Edita tu comentario:", commentText.textContent);
+   if (updatedComment !== null && updatedComment.trim() !== "") {
+       commentText.textContent = updatedComment;
+   }
+}
+
+function eliminarComentario(button) {
+   var commentDiv = button.parentNode;
+   commentDiv.parentNode.removeChild(commentDiv);
 }
 
