@@ -2,74 +2,182 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corazon</title>
+    <title>Support | Recomendaciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css">
+    <style>
+        /* Ajuste para que el menú hamburguesa funcione en pantallas móviles */
+        @media (max-width: 768px) {
+            .sidebar-mini.sidebar-collapse .content-wrapper {
+                margin-left: 0 !important;
+            }
+            .content-wrapper {
+                position: absolute;
+                left: 0;
+                right: 0;
+                transition: margin-left 0.3s ease;
+            }
+            .content-wrapper.sidebar-open {
+                margin-left: 250px; /* Ancho del menú deslizante */
+            }
+        }
+        /* Estilos para las vistas de contenido */
+        .tabcontent {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+
+        /* Estilo para el sidebar */
+        .main-sidebar {
+    background-color: #8B0000; /* Rojo oscuro */
+}
+
+    </style>
 </head>
-<style>
-    body{
-        margin:0;
-        padding:0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #0b1522;
-    }
-    .heart{
-        height: 150px;
-        width: 150px;
-        background-color: white;
-        position: relative;
-        transform: rotate(45deg);
-        box-shadow: -20px 20px 150px  red;
-        animation: palpitar 0.4s linear infinite alternate;
-    }
-    .contenido{
-        position: fixed;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    h1{
-        color: black;
-    }
+<body class="sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
 
-    @keyframes palpitar{
-        0%{transform: rotate(45deg) scale(1.10);}
-        80%{transform: rotate(45deg) scale(1.0);}
-        100%{transform: rotate(45deg) scale(0.8);}
-    }
-    .heart::before{
-        content: "";
-        position: absolute;
-        height: 150px;
-        width: 150px;
-        background: white;
-        right: 50%;
-        border-radius: 50%;
-        box-shadow: 20px 20px 150px white;
-    }
-   
-    .heart::after{
-        content: "";
-        position: absolute;
-        height: 150px;
-        width: 150px;
-        background: white;
-        top: -50%;
-        border-radius: 50%;
-        box-shadow: 10px 20px 150px white;
-        
-    }
-    .titulopag{
-        margin-top: -500px;
-        color: yellow;
-    }
-</style>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+           
+            <a href="#" class="brand-link">
+                <img src="\logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width: 35px;">
+                <span class="brand-text font-weight-bold" style="margin-center: 10px;">Recomendacion</span>
+            </a>
+            
 
-<body>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                            with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="openTab(event, 'dashboard')">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="openTab(event, 'profile')">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Profile
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="openTab(event, 'settings')">
+                                <i class="nav-icon fas fa-cogs"></i>
+                                <p>
+                                    Settings
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Opción 1
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <!-- Subopciones de la Opción 1 con Tabs -->
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" onclick="openTab(event, 'primero')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subopción 1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#tab2" class="nav-link" data-toggle="tab" onclick="openTab(event, 'subopcion1_tab2')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subopción 2</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Add more menu items here -->
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
 
-    <div class="heart"></div>
-    <div class="contenido"><h1></h1><h1></h1></div>
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Dashboard Tab Content -->
+                    <div id="dashboard" class="tabcontent active">
+                        <h1>Dashboard Content</h1>
+                        <p>This is the content for the Dashboard tab.</p>
+                    </div>
+                    <!-- Profile Tab Content -->
+                    <div id="profile" class="tabcontent">
+                        <h1>Profile Content</h1>
+                        <p>This is the content for the Profile tab.</p>
+                    </div>
+                    <!-- Settings Tab Content -->
+                    <div id="settings" class="tabcontent">
+                        <h1>Settings Content</h1>
+                        <p>This is the content for the Settings tab.</p>
+                    </div>
+                       <!-- Semestres -->
+                    <div id="primero" class="tabcontent">
+                        <h1>Primer Semestre</h1>
+                        <p>This is the content for the Settings tab.</p>
+                    </div>  
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+    <script>
+        // Función para mostrar la vista de contenido correspondiente al hacer clic en una opción del menú
+        function openTab(evt, tabName) {
+            // Ocultar todas las vistas de contenido
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            // Desactivar todas las opciones del menú
+            var navlinks = document.getElementsByClassName("nav-link");
+            for (var i = 0; i < navlinks.length; i++) {
+                navlinks[i].classList.remove("active");
+            }
+            // Mostrar la vista de contenido seleccionada
+            document.getElementById(tabName).classList.add("active");
+            // Activar la opción del menú seleccionada
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
+
